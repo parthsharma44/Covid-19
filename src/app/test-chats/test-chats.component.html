@@ -1,0 +1,270 @@
+<app-header-navbar></app-header-navbar>
+
+<div class="text-body-left">
+    <div class="card-text p-3 mt-3 mx-auto text-white">
+        <p style="font-weight: 500;">Please note that information from this chat will be used for monitoring & management of the current health crisis and 
+            research in the fight against COVID-19.
+        </p>
+    </div>
+</div>
+
+<div class="text-body-left">
+    <div class="card-text p-3 mt-3 mx-auto text-white">
+        <p style="font-weight: 500;">Are you experiencing any of the following symptoms?
+        </p>
+    </div>
+</div>
+
+<!-- First Question Asking -->
+<div *ngIf="AskingQuestions1">
+    <div class="select-box">
+        <div class="line mt-4 flex">
+            <span class="btn bg-white shadow" (click)="AskingQuestions1=false; RightSideAnswerCough=true; NoneOfTheAboveAnswer=true; AskingQuestions2=true; unWell($event.toElement.innerHTML)">Cough</span>
+        </div>
+        <div class="line mt-4 flex">
+            <span class="btn bg-white shadow" (click)="AskingQuestions1=false; RightSideAnswerFever=true; NoneOfTheAboveAnswer=true; AskingQuestions2=true; unWell($event.toElement.innerHTML)">Fever</span>
+        </div>
+    </div>
+    
+    <div class="select-box">
+        <div class="line mt-4 flex">
+            <span class="btn bg-white shadow" (click)="AskingQuestions1=false; RightSideAnswerBreathing=true; NoneOfTheAboveAnswer=true; AskingQuestions2=true; unWell($event.toElement.innerHTML)">Difficulty in Breathing</span>
+        </div>
+    </div>
+    
+    <div class="select-box">
+        <div class="line mt-4 flex">
+            <span class="btn bg-white shadow" (click)="AskingQuestions1=false; RightSideAnswerNone=true; NoneOfTheAboveAnswer=true; AskingQuestions2=true; Well($event.toElement.innerHTML)">None of the Above</span>
+        </div>
+    </div>
+</div>
+<!-- First Question Asking End-->
+
+<!-- Right side Question -->
+<div class="text-body-right my-4 border" *ngIf="RightSideAnswerCough">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">Cough
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="RightSideAnswerFever">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">Fever
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="RightSideAnswerBreathing">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">Difficulty in Breathing
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="RightSideAnswerNone">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">None of the Above
+        </p>
+    </div>
+</div>
+<!-- Right side Question End -->
+
+<div *ngIf="NoneOfTheAboveAnswer">
+<div class="text-body-left" style="margin-top: 100px;" >
+    <div class="card-text p-3 mt-3 mx-auto text-white">
+        <p style="font-weight: 500;">Have you ever had any of the following:
+        </p>
+    </div>
+</div>
+</div>
+
+<!-- Second Question Asking -->
+<div *ngIf="AskingQuestions2">
+<div class="select-box">
+    <div class="line mt-4 flex">
+        <span class="btn bg-white shadow" (click)="AskingQuestions2=false; Diabetes=true; NoneOfTheAboveAnswer2=true; AskingQuestions3=true; unWell($event.toElement.innerHTML)">Diabetes</span>
+    </div>
+    <div class="line mt-4 flex">
+        <span class="btn bg-white shadow" (click)="AskingQuestions2=false; Hypertension=true; NoneOfTheAboveAnswer2=true; AskingQuestions3=true; unWell($event.toElement.innerHTML)">Hypertension</span>
+    </div>
+</div>
+
+<div class="select-box">
+    <div class="line mt-4 flex">
+        <span class="btn bg-white shadow" (click)="AskingQuestions2=false; LungDisease=true; NoneOfTheAboveAnswer2=true; AskingQuestions3=true; unWell($event.toElement.innerHTML)">Lung Disease</span>
+    </div>
+    <div class="line mt-4 flex">
+        <span class="btn bg-white shadow" (click)="AskingQuestions2=false; HeartDisease=true; NoneOfTheAboveAnswer2=true; AskingQuestions3=true; unWell($event.toElement.innerHTML)">Heart Disease</span>
+    </div>
+</div>
+
+<div class="select-box">
+    <div class="line mt-4 flex">
+        <span class="btn bg-white shadow" (click)="AskingQuestions2=false; RightSideAnswerNone2=true; NoneOfTheAboveAnswer2=true; AskingQuestions3=true; Well($event.toElement.innerHTML)">None of the Above</span>
+    </div>
+</div>
+</div>
+<!-- Second Question Asking End-->
+
+
+<!-- Right side Question -->
+<div class="text-body-right my-4 border" *ngIf="Diabetes">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">Diabetes
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="Hypertension">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">Hypertension
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="LungDisease">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">Lung Disease
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="HeartDisease">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">Heart Disease
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="RightSideAnswerNone2">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">None of the Above 
+        </p>
+    </div>
+</div>
+<!-- Right side Question End -->
+
+<div class="text-body-left" style="margin-top: 100px;" *ngIf="NoneOfTheAboveAnswer2">
+    <div class="card-text p-3 mt-3 mx-auto text-white">
+        <p style="font-weight: 500;">Have you traveled anywhere internationally in the last 28-45 days?
+        </p>
+    </div>
+</div>
+
+<!-- Third Question Asking -->
+<div class="select-box" *ngIf="AskingQuestions3">
+    <div class="line mt-4 flex">
+        <span class="btn bg-white shadow" (click)="AskingQuestions3=false; RightSideAnswerYes1=true; WhichOfTheFollowingApplyToYou=true; AskingQuestions4=true; unWell($event.toElement.innerHTML)">Yes</span>
+    </div>
+    <div class="line mt-4 flex">
+        <span class="btn bg-white shadow" (click)="AskingQuestions3=false; RightSideAnswerNO1=true; WhichOfTheFollowingApplyToYou=true; AskingQuestions4=true; Well($event.toElement.innerHTML)">No</span>
+    </div>
+</div>
+<!-- Third Question Asking End-->
+
+<!-- Right side Question -->
+<div class="text-body-right my-4 border" *ngIf="RightSideAnswerYes1">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">Yes
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="RightSideAnswerNO1">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">No
+        </p>
+    </div>
+</div>
+<!-- Right side Question End-->
+
+<div class="text-body-left" style="margin-top: 100px;" *ngIf="WhichOfTheFollowingApplyToYou">
+    <div class="card-text p-3 mt-3 mx-auto text-white">
+        <p style="font-weight: 500;">Which of the following apply to you?
+        </p>
+    </div>
+</div>
+
+<!-- Fourth Question Asking -->
+<div *ngIf="AskingQuestions4">
+    <div class="select-box">
+        <div class="line mt-4 flex">
+            <span class="btn bg-white shadow" (click)="AskingQuestions4=false; Ihaverecentlyinteracted=true; unWell($event.toElement.innerHTML); nowShow()">I have recently interacted or lived with someone who has tested positive for COVID-19</span>
+        </div>
+    </div>
+
+    <div class="select-box">
+        <div class="line mt-4 flex">
+            <span class="btn bg-white shadow" (click)="AskingQuestions4=false; IAmAHealthcareWorker=true; unWell($event.toElement.innerHTML); nowShow()">I am a healthcare worker and i examined a COVID-19 confirmed case without protective gear</span>
+        </div>
+    </div>
+
+    <div class="select-box">
+        <div class="line mt-4 flex">
+            <span class="btn bg-white shadow" (click)="AskingQuestions4=false; RightSideAnswerrrOfNoneOfTheAbove=true; Well($event.toElement.innerHTML); nowShow()">None of the Above</span>
+        </div>
+    </div>
+</div>
+<!-- Fourth Question Asking End-->
+
+<!-- Right side Question -->
+<div class="text-body-right my-4 border" *ngIf="Ihaverecentlyinteracted">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">I have recently interacted or lived with someone who has tested positive for COVID-19
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="IAmAHealthcareWorker">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">I am a healthcare worker and i examined a COVID-19 confirmed case without protective gear
+        </p>
+    </div>
+</div>
+
+<div class="text-body-right my-4 border" *ngIf="RightSideAnswerrrOfNoneOfTheAbove">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">None of the Above
+        </p>
+    </div>
+</div>
+<!-- Right side Question End -->
+
+<div class="text-body-left" style="margin-top: 150px;" *ngIf="HightRisk">
+    <div class="card-text p-3 mt-3 mx-auto text-white">
+        <p style="font-weight: 500;">You are unwell, your infection risk is High. We recommend that you Consult to Doctor. 
+        </p>
+    </div>
+</div>
+
+
+<div class="text-body-left" style="margin-top: 110px;" *ngIf="YourRiskIsLow">
+    <div class="card-text p-3 mt-3 mx-auto text-white">
+        <p style="font-weight: 500;">Your infection risk is low. We recommend that you stay at home to avoid any chance of exposure to 
+            the Novel Coronavirus. <br><br>
+            Retake the Self-Assessment Test if you develop symptoms or come in contact with a COVID-19 confirmed patient. <br>
+        </p>
+    </div>
+</div>
+
+<!-- Fifth Question Asking -->
+<div class="select-box" *ngIf="AskingQuestions5">
+    <div class="line mt-4 flex">
+        <span class="btn bg-white shadow" (click)="AskingQuestions5=false; RightSideAnswerOfOk=true">Ok</span>
+    </div>
+</div>
+<!-- Fifth Question Asking End-->
+
+<!-- Right side Question -->
+<div class="text-body-right my-4 border" *ngIf="RightSideAnswerOfOk">
+    <div class="card-text px-4 mt-3 mx-auto">
+        <p style="font-weight: 500;">Ok
+        </p>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<!-- Right side Question End -->

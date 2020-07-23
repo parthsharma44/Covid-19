@@ -1,0 +1,29 @@
+.text-body-left{
+    background-color: purple;
+    border-radius: 20px 20px 20px 2px;
+    width: 70%;
+    margin-left: 10px;
+}
+
+.select-box{
+    max-width: 90%;
+    margin-left: 10px;
+    display: flex;
+}
+
+
+.line span{
+    padding: 10px 20px;
+    color: blue; 
+    font-weight: 700;
+    margin-left: 10px;
+    
+}
+
+.text-body-right{
+    background-color: White;
+    border-radius: 25px 25px 2px 20px;
+    margin-right: 10px;
+    float: right;
+}
+

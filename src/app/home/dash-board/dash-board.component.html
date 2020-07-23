@@ -1,0 +1,164 @@
+<app-header-navbar></app-header-navbar>
+
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-7 mt-4">
+                <img src="assets/images/img3.png">
+            </div>
+            <div class="col-lg-6 col-md-4 col-5 my-auto p">
+                <p>All you need is stay at home</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="container mt-4">
+        <div class="col-lg-12 mt-3 mx-auto hp">
+            <h5>Across World</h5>
+            <p>Last Update {{ForTotalDataDate | date}}</p>
+        </div>
+        <div class="row bg-white shadow">
+            <div class="col-lg-4 col-md-4 col-4 py-5 text-center card ">
+                <i class="fa fa-circle-o" style="text-shadow: 0 0 10px #ff8000; color: #ff8000; font-size: 30px;" aria-hidden="true"></i><br>
+                <span style="font-size: 130%;color: #ff8000;">{{TotalCases}}</span><br>
+                <p style="font-size: 13px; color: gray;">Total Cases</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-4 py-5 text-center card">
+                <i class="fa fa-circle-o" style="color: #ff3333; text-shadow: 0 0 10px #ff3333; font-size: 30px;" aria-hidden="true"></i><br>
+                <span style="font-size:130%; color:#ff3333;">{{TotalDeaths}}</span><br>
+                <p style="font-size: 13px; color: gray;">Total Deaths</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-4 card py-5 text-center">
+                <i class="fa fa-circle-o" style="color: #00ff00; text-shadow: 0 0 10px #00ff00; font-size: 30px;" aria-hidden="true"></i><br>
+                <span style="font-size:130%; color:#00ff00;">{{TotalRecovered}}</span><br>
+                <p style="font-size: 13px; color: gray;">Total Recovered</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-6 col-lg-8 col-12 mx-auto mt-3">
+                <select class="form-control select" (change)="getCountryDetail($event.target.value)">
+                    <option disabled selected>--Select Country--</option>
+                    <option *ngFor="let country of countries" value={{country.Slug}}>{{country.Country}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mt-3 mx-auto hp">
+                <h5>Case Update</h5>
+                <p>Last Update {{date | date}}</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-4 px-1 py-2 text-center LiveCard mx-auto card">
+                <i class="fa fa-circle-o" style="text-shadow: 0 0 10px #ff8000; color: #ff8000; font-size: 30px;" aria-hidden="true"></i><br>
+                <span style="font-size: 130%;color: #ff8000;">{{infected}}</span><br>
+                <p style="font-size: 13px; color: gray;">Infected</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-4 px-1 py-2 text-center LiveCard mx-auto card">
+                <i class="fa fa-circle-o" style="color: #ff3333; text-shadow: 0 0 10px #ff3333; font-size: 30px;" aria-hidden="true"></i><br>
+                <span style="font-size:130%; color:#ff3333;">{{deaths}}</span><br>
+                <p style="font-size: 13px; color: gray;">Deaths</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-4 px-1 py-2 text-center LiveCard mx-auto card">
+                <i class="fa fa-circle-o" style="color: #00ff00; text-shadow: 0 0 10px #00ff00; font-size: 30px;" aria-hidden="true"></i><br>
+                <span style="font-size:130%; color:#00ff00;">{{recovered}}</span><br>
+                <p style="font-size: 13px; color: gray;">Recovered</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-lg-12 col-lg-12 mt-3 mx-auto">
+                <h5 routerLink="/home/faq">Symptoms of <span style="color: purple;">COVID 19</span></h5>
+            </div>
+           <div class="items">
+               <div class="item">
+                   <img src="assets/images/fever.png">
+                   <p>Fever</p>
+                </div>
+               <div class="item">
+                   <img src="assets/images/cough.png">
+                   <p>Dry Cough</p>
+                </div>
+               <div class="item">
+                   <img src="assets/images/anxiety.png">
+                   <p>Headache</p>
+                </div>
+               <div class="item">
+                   <img src="assets/images/asthma.png">
+                   <p>Breathing</p>
+                </div>
+           </div>
+        </div>
+    </div>
+    
+    
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-lg-12 col-lg-12 mt-3 mx-auto">
+                <h5 routerLink="/home/faq">Prevention</h5>
+            </div>
+           <div class="items">
+               <div class="item2">
+                   <div class="row my-3">
+                       <div class="col-lg-4 col-4">
+                           <img src="assets/images/handwash.png">
+                       </div>
+                       <div class="col-lg-8 col-8">
+                           <h6>Wash</h6>
+                           <p>hand often</p>
+                       </div>
+                   </div>
+                </div>
+                <div class="item2">
+                    <div class="row my-3">
+                        <div class="col-lg-4 col-4">
+                            <img src="assets/images/cover.png">
+                        </div>
+                        <div class="col-lg-8 col-8">
+                            <h6>Cover</h6>
+                            <p>your cough</p>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="item2">
+                    <div class="row my-3">
+                        <div class="col-lg-4 col-4">
+                            <img src="assets/images/protection.png">
+                        </div>
+                        <div class="col-lg-8 col-8">
+                            <h6>Use</h6>
+                            <p>mask</p>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="item2">
+                    <div class="row my-3">
+                        <div class="col-lg-4 col-4">
+                            <img src="assets/images/washing-dishes.png">
+                        </div>
+                        <div class="col-lg-8 col-8">
+                            <h6>Always</h6>
+                            <p>clean</p>
+                        </div>
+                    </div>
+                 </div>
+           </div>
+        </div>
+    </div>
+
+    <!-- <google-chart [data]="pieChart"></google-chart> -->
+    <br>
+    <br>
+    <br>
+    
+</div>

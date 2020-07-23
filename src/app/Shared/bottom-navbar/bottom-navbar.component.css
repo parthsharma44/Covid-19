@@ -1,0 +1,16 @@
+a {
+    color: #333;
+    font-size: 80%;
+    font-weight: 700;
+}
+
+li a i{
+    font-size: 130%;
+    /* font-weight: 700; */
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: purple;
+}
+
